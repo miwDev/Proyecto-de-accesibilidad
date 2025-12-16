@@ -1,0 +1,84 @@
+<div class="header-container">
+  <div class="company-details">
+    <a routerLink="/home" routerLinkActive=""><img src="/assets/logo.png" alt="LogoPag" /></a>
+    <p>COMPANY</p>
+  </div>
+
+  <div class="header-options">
+    <button
+      class="icon-btn mobile-only"
+      (click)="toggleNav()"
+      aria-label="Abrir menú de navegación"
+    >
+      <svg
+        width="30"
+        height="30"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 6H20M4 12H20M4 18H20"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+
+    <nav [class.show-dropdown]="navAbierto" class="main-nav">
+      <ul>
+        <li><a routerLink="/home" routerLinkActive="" (click)="navAbierto = false">HOME</a></li>
+        <li><a routerLink="/form" routerLinkActive="" (click)="navAbierto = false">FORM</a></li>
+        <li><a routerLink="/table" routerLinkActive="" (click)="navAbierto = false">TABLE</a></li>
+      </ul>
+    </nav>
+
+    <div class="menu-container">
+      <button
+        (click)="toggleMenu()"
+        id="accesibility-btn"
+        class="icon-btn"
+        type="button"
+        aria-label="Abrir menú de accesibilidad"
+      >
+        <img src="/assets/accesibility.svg" alt="Accesibilidad" />
+      </button>
+
+      @if (menuAbierto) {
+      <div class="dropdown-box">
+        <button class="menu-btn" (click)="fontUp()">
+          <img src="assets/fontUp.svg" alt="" class="menu-icon" />
+          <span>Aumentar letra</span>
+        </button>
+
+        <button class="menu-btn" (click)="fontDown()">
+          <img src="assets/fontDown.svg" alt="" class="menu-icon" />
+          <span>Disminuir letra</span>
+        </button>
+
+        <button class="menu-btn" (click)="highContrast()">
+          <img src="assets/contrastUp.svg" alt="" class="menu-icon" />
+          <span>Aumentar Contraste</span>
+        </button>
+
+        <button class="menu-btn" (click)="easyRead()">
+          <img src="assets/colorBlind.svg" alt="" class="menu-icon" />
+          <span>Lectura Fácil</span>
+        </button>
+
+        <button class="menu-btn" (click)="darkMode()">
+          <img src="assets/darkMode.svg" alt="" class="menu-icon" />
+          <span>Modo Oscuro</span>
+        </button>
+
+        <button class="menu-btn logout" (click)="reset()">
+          <img src="assets/reset.svg" alt="" class="menu-icon" />
+          <span>Restablecer</span>
+        </button>
+      </div>
+      }
+    </div>
+  </div>
+</div>

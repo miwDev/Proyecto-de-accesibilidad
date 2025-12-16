@@ -1,0 +1,221 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 5%;
+
+  h1 {
+    font-weight: var(--title-weight);
+    line-height: 1.2;
+    margin-top: 0;
+    font-family: var(--font-family);
+  }
+  h2,
+  h3 {
+    font-weight: var(--subtitle-weight);
+    line-height: 1.2;
+    margin-top: 0;
+    font-family: var(--font-family);
+  }
+
+  a {
+    text-decoration: none;
+    cursor: pointer;
+    &:focus {
+      outline: 2px solid var(--accent-actual);
+      outline-offset: 4px;
+    }
+  }
+}
+
+.hero-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 0;
+  max-width: 1200px;
+  width: 100%;
+
+  .hero-text {
+    flex: 1 1 50%;
+    min-width: 300px;
+    padding-right: 2rem;
+
+    h1 {
+      font-size: calc(var(--title-size) * 2.5);
+      color: var(--text-color);
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      font-size: calc(var(--text-size) * 1.5);
+      color: var(--text-color);
+      margin-bottom: 2rem;
+    }
+  }
+
+  .hero-img {
+    flex: 1 1 40%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  display: inline-block;
+
+  font-size: var(--text-size);
+
+  &.btn-primary {
+    background-color: var(--accent-actual);
+    color: var(--bg-actual);
+    border: 2px solid var(--accent-actual);
+
+    &:hover {
+      background-color: var(--secondary-actual);
+      border-color: var(--secondary-actual);
+    }
+  }
+
+  &.btn-secondary {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 2px solid var(--text-color);
+
+    &:hover {
+      color: var(--accent-actual);
+      border-color: var(--accent-actual);
+    }
+  }
+}
+
+.features-section {
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+  padding: 4rem 0;
+  margin: 4rem 0;
+
+  h2 {
+    margin-bottom: 3rem;
+    font-size: calc(var(--title-size) * 1.6);
+    color: var(--text-color);
+  }
+
+  .feature-list {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    .feature-item {
+      flex: 1 1 250px;
+      padding: 1.5rem;
+      background-color: var(--bg-actual);
+      border-radius: 6px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      border: 1px solid var(--bg-secondary-actual);
+
+      h3 {
+        color: var(--accent-actual);
+        margin-bottom: 0.5rem;
+        font-size: var(--title-size);
+      }
+
+      p {
+        color: var(--text-color);
+        font-size: var(--text-size);
+      }
+    }
+  }
+}
+
+.cta-section {
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+  padding: 3rem;
+  background-color: var(--accent-actual);
+  color: var(--bg-actual);
+  border-radius: 8px;
+  margin-bottom: 4rem;
+
+  h2 {
+    font-size: calc(var(--title-size) * 1.6);
+    margin-bottom: 1.5rem;
+    color: var(--bg-actual);
+  }
+
+  .btn-primary {
+    background-color: var(--bg-actual);
+    color: var(--accent-actual);
+    border-color: var(--bg-actual);
+
+    &:hover {
+      background-color: var(--bg-secondary-actual);
+      border-color: var(--bg-secondary-actual);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column-reverse;
+    padding: 2rem 1rem;
+    text-align: center;
+
+    .hero-text {
+      padding-right: 0;
+      margin-top: 2rem;
+    }
+
+    .hero-img {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .hero-btns {
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+
+  .features-section {
+    padding: 2rem 1rem;
+
+    .feature-list {
+      flex-direction: column;
+      align-items: center;
+
+      .feature-item {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+
+  .cta-section {
+    padding: 2rem 1rem;
+    margin: 2rem 1rem;
+    width: auto;
+  }
+}

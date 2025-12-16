@@ -1,0 +1,131 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 5%;
+
+  h1 {
+    font-weight: var(--title-weight);
+    line-height: 1.2;
+    margin-top: 0;
+    font-family: var(--font-family);
+  }
+  h2,
+  h3 {
+    font-weight: var(--subtitle-weight);
+    line-height: 1.2;
+    margin-top: 0;
+    font-family: var(--font-family);
+  }
+
+  a {
+    text-decoration: none;
+    cursor: pointer;
+    &:focus {
+      outline: 2px solid var(--accent-actual);
+      outline-offset: 4px;
+    }
+  }
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 450px;
+  margin-top: 1rem;
+  padding: 2rem;
+
+  background-color: var(--bg-actual);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--bg-secondary-actual);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  label {
+    font-family: var(--font-family);
+    font-weight: var(--subtitle-weight);
+    color: var(--text-color);
+    font-size: var(--subtitle-size);
+  }
+
+  input {
+    padding: 0.75rem;
+    border-radius: 4px;
+    border: 1px solid var(--text-color);
+    background-color: var(--bg-actual);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    font-size: var(--text-size);
+    transition: border-color 0.3s, outline 0.3s;
+
+    &::placeholder {
+      color: var(--text-color);
+      opacity: 0.6;
+    }
+
+    &:focus {
+      outline: 2px solid var(--accent-actual);
+      outline-offset: 2px;
+      border-color: var(--accent-actual);
+    }
+  }
+}
+
+.error-msg {
+  color: var(--error);
+  font-family: var(--font-family);
+  font-size: 0.75rem;
+  font-weight: var(--text-weight);
+  margin-top: 0.2rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  display: inline-block;
+  cursor: pointer;
+  font-family: var(--font-family);
+
+  &.btn-primary {
+    background-color: var(--accent-actual);
+    color: var(--bg-actual);
+    border: 2px solid var(--accent-actual);
+
+    &:hover {
+      background-color: var(--secondary-actual);
+      border-color: var(--secondary-actual);
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    padding: 1rem;
+  }
+
+  .register-form {
+    padding: 1.5rem;
+    max-width: 100%;
+  }
+}

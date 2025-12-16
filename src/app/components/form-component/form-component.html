@@ -1,0 +1,55 @@
+<div class="content">
+  <h2>Formulario de Registro</h2>
+
+  <form class="register-form">
+    <div class="form-group">
+      <label for="nombre">Nombre</label>
+      <input
+        [(ngModel)]="nombre"
+        type="text"
+        id="nombre"
+        name="nombre"
+        placeholder="Ej: Juan"
+        ngModel
+        required
+      />
+      @if(errorNombre){
+      <span class="error-msg">El nombre es obligatorio</span>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="apellido">Apellido</label>
+      <input
+        [(ngModel)]="apellido"
+        type="text"
+        id="apellido"
+        name="apellido"
+        placeholder="Ej: Pérez"
+        ngModel
+        required
+      />
+      @if(errorApellido){
+      <span class="error-msg">El apellido es obligatorio</span>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="dni">DNI</label>
+      <input
+        [(ngModel)]="dni"
+        type="text"
+        id="dni"
+        name="dni"
+        placeholder="Ej: 12345678Z"
+        ngModel
+        required
+      />
+      @if(errorDni){
+      <span class="error-msg">Formato de DNI inválido</span>
+      }
+    </div>
+
+    <button (click)="enviarFormulario()" type="submit" class="btn btn-primary">Enviar Datos</button>
+  </form>
+</div>

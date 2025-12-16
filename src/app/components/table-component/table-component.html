@@ -1,0 +1,39 @@
+<div class="content">
+  <h2>Tabla de Alumnos</h2>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>NOMBRE</th>
+          <th>APELLIDO</th>
+          <th>DNI</th>
+          <th>ACCIONES</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (alumno of alumnos ; track $index; let idx = $index) {
+        <tr>
+          <td>{{ $index + 1 }}</td>
+          <td>{{ alumno.nombre }}</td>
+          <td>{{ alumno.apellido }}</td>
+          <td>{{ alumno.dni }}</td>
+          <td>
+            <input
+              (click)="borrarAlumno(idx)"
+              type="button"
+              value="DELETE"
+              class="btn btn-delete"
+            />
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <a routerLink="/form" routerLinkActive="active" class="btn btn-primary mt-large">
+    Nuevo Alumno
+  </a>
+</div>
